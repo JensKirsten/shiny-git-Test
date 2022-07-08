@@ -7,7 +7,7 @@ import { renderContent } from "./render";
 // Milliseconds to fade in or out
 const fadeDuration = 250;
 
-function show({
+async function show({
   html = "",
   action = "",
   deps = [],
@@ -15,7 +15,7 @@ function show({
   id = null,
   closeButton = true,
   type = null,
-} = {}): ReturnType<typeof randomId> {
+} = {}): Promise<ReturnType<typeof randomId>> {
   if (!id) id = randomId();
 
   // Create panel if necessary
@@ -32,7 +32,7 @@ function show({
     `<div class="shiny-notification-content-action">${action}</div>`;
   const $content = $notification.find(".shiny-notification-content");
 
-  renderContent($content, { html: newHtml, deps: deps });
+  await renderContent($content, { html: newHtml, deps: deps });
 
   // Remove any existing classes of the form 'shiny-notification-xxxx'.
   // The xxxx would be strings like 'warning'.

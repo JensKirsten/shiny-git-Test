@@ -7,6 +7,6 @@ declare function show({ html, action, deps, duration, id, closeButton, type, }?:
     id?: any;
     closeButton?: boolean;
     type?: any;
-}): ReturnType<typeof randomId>;
+}): Promise<ReturnType<typeof randomId>>;
 declare function remove(id?: string): void;
 export { show as showNotification, remove as removeNotification };
