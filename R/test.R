@@ -8,6 +8,10 @@
 #' @return A 1-row data frame representing a single test run. `result` and
 #'   is a "list column", or a column that contains list elements.
 #' @noRd
+#'
+#'
+#'
+#' Test Text hinzufügen
 result_row <- function(file, pass, result) {
   stopifnot(is.list(result))
   df <- data.frame(
