@@ -10,7 +10,7 @@
 #' @noRd
 #'
 #'
-#'
+#' Text neuer Branch test
 #' Test Text hinzufügen
 result_row <- function(file, pass, result) {
   stopifnot(is.list(result))
